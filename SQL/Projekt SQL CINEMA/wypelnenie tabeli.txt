@@ -1,0 +1,116 @@
+--movie
+SELECT * FROM movie;
+
+INSERT INTO Movie (ID,Title, DIRECTOR, DESCRIPTION, DURATION_MIN)
+VALUES (4,'HELLO WORLD','albert','abcdegrtfyigkbih',160);
+
+INSERT INTO Movie (ID,Title, DIRECTOR, DESCRIPTION, DURATION_MIN)
+VALUES (1,'007','albert','abcdegrtfyigkbih',160);
+
+INSERT INTO Movie (ID,Title, DIRECTOR, DESCRIPTION, DURATION_MIN)
+VALUES (2,'cowboy bebop','kodzima', 'gkbih',230);
+
+INSERT INTO Movie (ID,Title, DIRECTOR, DESCRIPTION, DURATION_MIN)
+VALUES (3,'we will die','suicide','45678984854845h',60);
+
+
+
+--employee
+SELECT * FROM employee;
+
+INSERT INTO employee (ID,  name, second_name, username, password)
+VALUES (1,'zahar','zubyk','Z01berg','123456');
+INSERT INTO employee (id, name, second_name, username, password)
+VALUES (2, 'denys', 'melnik', 'denelon', 123456);
+INSERT INTO employee (id, name, second_name, username, password)
+VALUES (3, 'vita', 'zubyk', 'vita', 15926);
+
+--ticket_type 
+SELECT * FROM ticket_type;
+
+INSERT INTO ticket_type (ID,  ticket_type)
+VALUES (1,'rodzinny');
+
+INSERT INTO ticket_type (ID,  ticket_type)
+VALUES (2,'vip');
+
+INSERT INTO ticket_type (ID,  ticket_type)
+VALUES (3,'solo');
+
+--Aktor
+SELECT * FROM aktor;
+
+INSERT INTO aktor (ID, name, second_name, country)
+VALUES (1,'johny', 'deep', 'usa');
+
+INSERT INTO aktor (ID, name, second_name, country)
+VALUES (2,'angelina', 'jolly', 'usa');
+
+INSERT INTO aktor (ID, name, second_name, country)
+VALUES (3,'tom', 'crouse', 'france');
+
+--sala
+SELECT * FROM sala;
+
+INSERT INTO sala (ID, numer, seats_no)
+VALUES (1,'a1',150);
+
+INSERT INTO sala (ID, numer, seats_no)
+VALUES (2,'a2',300);
+
+INSERT INTO sala (ID, numer, seats_no)
+VALUES (3,'a3',500);
+
+--seats
+SELECT * FROM seats;
+
+INSERT INTO seats (ID, "row", "number", sala_ID)
+VALUES (1, 10,  100, 1);
+
+INSERT INTO seats (ID, "row", "number", Sala_ID )
+VALUES (2, 20,  150, 2);
+
+INSERT INTO seats (ID, "row", "number", Sala_ID )
+VALUES (3, 30,  250, 3);
+
+--screning
+SELECT * FROM screening;
+
+INSERT INTO screening (ID, movie_ID, screening_start, sala_ID)
+VALUES (1, 2, CURRENT_TIMESTAMP, 1);
+    
+INSERT INTO screening (ID, movie_ID, screening_start, sala_ID)
+VALUES (2, 1, '16.09.2003 20:00:00', 2);
+    
+INSERT INTO screening (ID, movie_ID, screening_start, sala_ID)
+VALUES (3, 3, '16.09.2022 12:00:00', 3);
+    
+--ticket
+SELECT * FROM ticket;
+
+INSERT INTO ticket (ID, employee_ID, screening_ID, resevation_date, ticket_type_ID, seats_ID, paid)
+VALUES (1, 1, 1, '16.09.2022 12:00:00', 1,1,'Y');
+    
+INSERT INTO ticket (ID, employee_ID, screening_ID, resevation_date, ticket_type_ID, seats_ID, paid)
+VALUES (2, 2, 2, CURRENT_TIMESTAMP, 2,2,'N');
+
+INSERT INTO ticket (ID, employee_ID, screening_ID, resevation_date, ticket_type_ID, seats_ID, paid)
+VALUES (3, 3, 3, null, 3, 3, 'N');
+
+--cast
+SELECT * FROM cast;
+
+INSERT INTO cast (movie_ID, aktor_ID)
+VALUES (1,1);
+
+INSERT INTO cast (movie_ID, aktor_ID)
+VALUES (1,2);
+
+INSERT INTO cast (movie_ID, aktor_ID)
+VALUES (2,1);
+
+INSERT INTO cast (movie_ID, aktor_ID)
+VALUES (2,2);
+
+INSERT INTO cast (movie_ID, aktor_ID)
+VALUES (3,3);

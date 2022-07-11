@@ -1,0 +1,9 @@
+Liczba 32 nie jest liczbą Fibonacciego
+Liczba 9 nie jest liczbą Fibonacciego
+Liczba 8 jest liczbą Fibonacciego, Liczba wystąpień 1
+Liczba 5 jest liczbą Fibonacciego, Liczba wystąpień 1
+Liczba 3 jest liczbą Fibonacciego, Liczba wystąpień 1
+Liczba 2 jest liczbą Fibonacciego, Liczba wystąpień 4
+Liczba 1 jest liczbą Fibonacciego, Liczba wystąpień 2
+Liczba a nie jest liczbą
+Liczba 13 jest liczbą Fibonacciego, Liczba wystąpień 1

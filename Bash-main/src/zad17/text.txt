@@ -1,0 +1,2 @@
+zadanie17.md: 313 znakow, uprawnienia: -rw-r--r--
+zadanie17.sh: 488 znakow, uprawnienia: -rwxrwxrwx

@@ -1,0 +1,3 @@
+# Zadanie 1
+
+Napisz skrypt, który pobierze trzy argumenty. Jeżeli pierwsze dwa są nazwami plików do odczytu, a trzeci jest nazwą pliku do zapisu (trzeba to obowiązkowo sprawdzić) to do pliku o nazwie 3-go argumentu zapisujemy wszystkie linie z pliku 1, których nie ma w pliku 2. Linie mają być zapisane od końca, a wszystkie znaki w linii mają byc odwrócone równiez odwrócone. Skrypt ma wyświetlić liczbę takich linii.

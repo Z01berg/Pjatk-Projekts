@@ -1,0 +1,113 @@
+--SELECT WHERE 5
+
+--1 WYSWIETLAMY PRACOWNIK?W JAKICH DRUGIE IMIE ZACZYNA SIE NA "Z"
+SELECT second_name, name, username
+FROM employee
+WHERE second_name LIKE 'z%';
+
+
+--2 WYSWIETLANIE REZERVATION Z ZNACZENIEM NULL
+SELECT resevation_date, paid
+FROM ticket
+WHERE resevation_date is null;
+
+
+
+--3 WYSWIETLANIE AKTOROW Z KRAJU USA
+SELECT name, second_name, country
+FROM aktor
+WHERE country LIKE 'usa';
+
+
+--4 WYSWIETLANIE FILMOW Z CZASEM WIECEJ NIZ 90
+SELECT title, director, duration_min
+FROM movie
+WHERE duration_min>90;
+
+
+--5 WYSWIETLANIE SAL Z MIEJSCAMY SIEDZIACYCH WIECEJ NIZ 250
+SELECT numer, seats_no
+FROM sala
+WHERE seats_no>250;
+
+
+--SELECT ZLACZENIE 5
+
+
+--1 WYSWIETLANIE MIEJSC ZAREZERWOWANYCH W ROZNYCH SALACH
+SELECT numer
+FROM sala a1
+JOIN seats s1
+ON a1.id= s1.sala_id;
+
+
+--2 WYSWIETLANIE KIEDY JAKI FILM ZACZYNA SIE
+SELECT title, screening_start
+FROM movie m1
+JOIN screening s1
+ON m1.id= s1.movie_ID;
+
+
+--3 WYSWIETLANIE JAKI PRACOWNIK NA JAKI SEANS SPRZEDAL MIEJSCE
+SELECT name, second_name, screening_ID, seats_ID
+FROM employee e 
+JOIN ticket t
+ON e.ID = t.employee_ID;
+
+
+--4 WYSWIETLANIE FILMU JAKI JEST >160 MIN I DIRECTOR KODZIMA
+SELECT title
+FROM movie
+WHERE duration_min >160
+INTERSECT
+SELECT title
+FROM movie
+WHERE director LIKE 'kodzima';
+
+--5 WYSWIETLANIE TYTUL FILMU KTOREGO AUTOR JEST ALBERT
+SELECT title
+FROM movie
+WHERE director LIKE 'albert'
+MINUS
+SELECT title
+FROM movie
+WHERE director LIKE 'kodzima';
+
+
+
+--SELECT GROUP BY 
+
+
+--1 WYSWIETLANIE ILE JEST FILMOW POGRUPOWANYCH PO DURATION_MIN
+SELECT  duration_min, COUNT (*)  title
+FROM movie
+GROUP BY duration_min;
+
+
+--2 WYSWIETLANIE ILE JEST AKTOROW POGRUPOWANYCH PO country
+SELECT  country,  COUNT (*)  name
+FROM aktor
+GROUP BY country;
+
+
+--3 WYSWIETLANIE ILE JEST FILMOW POGRUPOWANYCH PO screening_start
+SELECT screening_start, COUNT (*) movie_ID
+FROM screening
+GROUP BY screening_start;
+
+
+--SELECT GROUP BY - HAVING 
+
+
+--1  WYSWIETLANIE WIECEJ NIZ 2 FILMOW POGRUPOWANYCH PO DURATION_MIN 
+SELECT  duration_min, COUNT (*)  title
+FROM movie
+GROUP BY duration_min
+HAVING   COUNT(*) > 1;
+
+
+--2 WYSWIETLANIE KRAJ W KTORYM WIECEJ NIZ 1 AKTOR
+SELECT  country,  COUNT (*)  name
+FROM aktor
+GROUP BY country
+HAVING   COUNT(*) > 1;
